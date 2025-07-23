@@ -43,6 +43,7 @@ To test gpt response, follow these steps:
 To run the project
 Cd to pb/petersboat
 run
+
 python3 manage.py runserver
 
 Then follow the link to localhost displayed in the terminal
