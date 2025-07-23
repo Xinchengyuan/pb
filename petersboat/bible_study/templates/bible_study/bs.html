@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+    Interactive Bible Study
+{% endblock %}
+
+{% block content %}
+    <h1> Interactive Bible Study</h1>
+    <label for="verse">Select Verse：</label>
+    <select id="verse">
+        <option value="John 3:16"> John 3:16</option>
+        <option value="Psalm 23:1"> Psalm 23:1</option>
+        <option value="Matthew 5:3"> Matthew 5:3</option>
+    </select>
+
+<div id="bible-text"></div>
+<br>
+
+<label for="question">Please enter your question below：</label>
+<textarea id="question" rows="4" placeholder="Example: explain this verse..."></textarea>
+
+<button id = "ask" onclick="askGPT()">Ask GPT</button>
+
+<h3>💬 GPT Response：</h3>
+<div id="response">（Waiting for input...）</div>
+
+<script src="{% static 'js/ask_gpt.js' %}"></script>
+
+{% endblock %}

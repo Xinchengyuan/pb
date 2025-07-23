@@ -1,0 +1,46 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        {% block title%}
+            Django App
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src = "{% static 'js/main.js' %}" defer></script>
+</head>
+<body>
+    <nav>
+        <a href ="/">
+            <button class="nav-button" title ="Home"> Home </button>
+        </a> |
+
+        {% if user.is_authenticated %}
+            <a href ="{% url 'bible_study:biblestudy' %}">
+                <button class = "nav-button" title="biblestudy">Bible Study</button>
+            </a> |
+            <form class="logout" action="{% url 'users:logout' %}" method="post">
+                {% csrf_token %}
+                <button class="nav-button" title="User Logout">Log Out</button>
+            </form>
+        {% else %}
+            <a href ="{% url 'users:register' %}">
+                <button class="nav-button" title="Sign Up">Sign Up</button>
+            </a> |
+            <a href ="{% url 'users:login' %}">
+                <button class="nav-button" title="Log In">Log In</button>
+            </a>
+        {% endif %}
+    </nav>
+    </nav>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>
