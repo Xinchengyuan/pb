@@ -48,7 +48,7 @@ To test gpt response, follow these steps:
    So that petersboat/petersbooat/settings.py will work
    
 3. In pb/petersboat, create a new file named .env without any filename before the . 
-4. In .env file, enter OPENAI_API_KEY = "Your_openai_api_key", replace your Your_openai_api_key with your openai api key
+4. In .env file, enter OPENAI_API_KEY = "Your_openai_api_key", replace Your_openai_api_key with your openai api key
 
 To run the project
 Cd to pb/petersboat
