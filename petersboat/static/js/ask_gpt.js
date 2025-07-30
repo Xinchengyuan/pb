@@ -1,7 +1,7 @@
-const bibleText = {
-    "John 3:16": "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.",
-    "Psalm 23:1": "The Lord is my shepherd, I lack nothing.",
-    "Matthew 5:3": "Blessed are the poor in spirit,for theirs is the kingdom of heaven."
+  const bibleText = {
+    "约翰福音 3:16": "神爱世人，甚至将他的独生子赐给他们，叫一切信他的，不至灭亡，反得永生。(约翰福音 3:16 和合本)",
+    "诗篇 23:1": "耶和华是我的牧者，我必不至缺乏。(诗篇 23:1 和合本)",
+    "马太福音 5:3": "虚心的人有福了，因为天国是他们的。(马太福音 5:3 和合本)"
   };
 
   const verseSelect = document.getElementById("verse");
