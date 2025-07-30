@@ -1,16 +1,16 @@
 {% extends 'layout.html' %}
 
 {% block title %}
-    Register a New User
+    注册新用户
 {% endblock %}
 
 {% block content %}
-    <h1>Create Your Account</h1>
+    <h1>创建我的账号</h1>
     <form class="form-with-validation" action="{% url 'users:register' %}" method="post">
         {% csrf_token %}
         {{ form}}
         <button class="form-submit">Submit</button>
-        <a href = "{% url 'users:register' %}"> Have an account? Log in here. </a> 
+        <a href = "{% url 'users:login' %}"> 已经有账号？点击登录 </a> 
     </form>
 {% endblock %}
 

@@ -1,11 +1,11 @@
 {% extends 'layout.html' %}
 
 {% block title %}
-    user login
+    用户登录
 {% endblock %}
 
 {% block content %}
-    <h1>Login</h1>
+    <h1>登录</h1>
     <form class="form-with-validation" action="{% url 'users:login' %}" method="post">
         {% csrf_token %}
         {{ form }}
@@ -13,7 +13,7 @@
             <input type="hidden" name="next" value="{{ request.GET.next }}" />
         {% endif %}
         <button class="form-submit">Submit</button>
-        <a href = "{% url 'users:login' %}"> Do not have an account? Sign up here. </a> 
+        <a href = "{% url 'users:register' %}"> 还没有账号？点击注册 </a> 
     </form>
 {% endblock %}
 

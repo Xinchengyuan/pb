@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
+from .models import SiteVisit
 
 # Create your views here.
 def register_view(request):
@@ -8,6 +9,9 @@ def register_view(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             login(request,form.save())
+            visit = SiteVisit.objects.get_or_create(id=1)[0]
+            visit.count += 1
+            visit.save()
             return redirect("bible_study:biblestudy")
     else:
         form = UserCreationForm()
@@ -18,6 +22,10 @@ def login_view(request):
         form = AuthenticationForm(data=request.POST)
         if form.is_valid():
             login(request, form.get_user())
+            visit = SiteVisit.objects.get_or_create(id=1)[0]
+            visit.count += 1
+            visit.save()
+
             if "next" in request.POST:
                 return redirect(request.POST.get('next'))
             else:

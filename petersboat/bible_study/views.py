@@ -29,7 +29,18 @@ def ask_gpt_view(request):
                 ],
                 temperature=0.7
             )
-            return JsonResponse({"response": response.choices[0].message.content})
+
+            #extract response message content
+            content = response.choices[0].message.content
+            return JsonResponse({ 
+                "choices": [
+                    {
+                        "message": {
+                             "content": content
+                         }
+                    }
+                 ]                        
+            })
 
         except Exception as e:
             return JsonResponse({"error": str(e)}, status=500)

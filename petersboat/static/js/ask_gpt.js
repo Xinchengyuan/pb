@@ -21,7 +21,7 @@ const bibleText = {
     const verse = verseSelect.value;
     const verseContent = bibleText[verse];
 
-    const fullPrompt = `You are a Chinese Bible study assistant. Please answer the user's question based on the following scriptures.\n\n经文：${verse} - ${verseContent}\n\n User's question：${userInput}`;
+    const fullPrompt = `你是一个中文圣经研究助手。请根据以下经文回答用户的问题。\n\n 经文：${verse} - ${verseContent}\n\n 用户的问题：${userInput}`;
 
     document.getElementById("response").innerText = "Generating response...";
 
